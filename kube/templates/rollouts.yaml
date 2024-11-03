@@ -28,7 +28,7 @@ spec:
               - |
                 kill -15 1
                 sleep 30
-                kill 15 1
+                kill -15 1
         ports:
         - containerPort: 8080
         resources:
