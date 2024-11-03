@@ -12,8 +12,8 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t zero .
-      - docker tag wsc2024-ecr:latest $REPOSITORY_URI:$TAG
-      - docker tag wsc2024-ecr:latest $REPOSITORY_URI:latest
+      - docker tag zero:latest $REPOSITORY_URI:$TAG
+      - docker tag zero:latest $REPOSITORY_URI:latest
   post_build:
     commands:
       - echo Build completed on `date`
