@@ -26,4 +26,4 @@ artifacts:
     - imageTag.txt
 cache:
   paths:
-    - '/root/.gradle/caches/**/*'
+    - '/root/.gradle'
