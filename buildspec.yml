@@ -6,16 +6,19 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 950274644703.dkr.ecr.ap-northeast-2.amazonaws.com
       - REPOSITORY_URI=950274644703.dkr.ecr.ap-northeast-2.amazonaws.com/zero
+      - TAG=$(date +%Y%m%d%H%M%S)
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t zero .
-      - docker tag zero:latest $REPOSITORY_URI:latest
+      - docker tag wsc2024-ecr:latest $REPOSITORY_URI:$TAG
+      - docker tag wsc2024-ecr:latest $REPOSITORY_URI:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
+      - docker push $REPOSITORY_URI:$TAG
       - docker push $REPOSITORY_URI:latest
       - echo $TAG > imageTag.txt
 artifacts:
