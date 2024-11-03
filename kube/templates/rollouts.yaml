@@ -27,6 +27,7 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "500m"
+      terminationGracePeriodSeconds: 40      
   strategy:
     blueGreen:
       activeService: rollout-bluegreen-active
