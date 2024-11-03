@@ -13,7 +13,7 @@ public class AppController {
 
     @GetMapping("/long-running")
     public String longRunningTask() throws InterruptedException {
-        Thread.sleep(10000); // 10초 대기
+        Thread.sleep(60000); // 10초 대기
         return "Long running task completed";
     }
 }
