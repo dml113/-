@@ -8,7 +8,7 @@ public class AppController {
 
     @GetMapping("/")
     public String hello() {
-        return "Hello, This is Dispiny Grace Application!";
+        return "version 1.0.0";
     }
 
     @GetMapping("/long-running")
