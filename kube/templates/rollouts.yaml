@@ -33,7 +33,7 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "500m"
-      terminationGracePeriodSeconds: 40      
+      terminationGracePeriodSeconds: 50      
   strategy:
     canary:
       steps:
