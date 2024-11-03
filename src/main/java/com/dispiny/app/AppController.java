@@ -8,7 +8,7 @@ public class AppController {
 
     @GetMapping("/")
     public String hello() {
-        return "version 1.0.0";
+        return "version 2.0.0";
     }
 
     @GetMapping("/long-running")
