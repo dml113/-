@@ -24,3 +24,6 @@ phases:
 artifacts:
   files:
     - imageTag.txt
+cache:
+  paths:
+    - '/root/.gradle/caches/**/*'    
