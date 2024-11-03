@@ -35,7 +35,10 @@ spec:
             cpu: "500m"
       terminationGracePeriodSeconds: 40      
   strategy:
-    blueGreen:
-      activeService: rollout-bluegreen-active
-      previewService: rollout-bluegreen-preview
-      autoPromotionEnabled: true
+    canary:
+      steps:
+        - setWeight: 20
+        - pause: {duration: 10m}
+        - setWeight: 50
+        - pause: {duration: 10m}
+        - setWeight: 100
