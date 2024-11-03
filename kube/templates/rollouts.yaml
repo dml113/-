@@ -18,6 +18,17 @@ spec:
       - name: blue-green-app
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: Always
+        command: [ "/bin/sh", "-c", "echo 'Starting up'; trap 'echo Received Terminating signal' QUIT ;trap 'echo Received TERM signal' TERM ; while true; do echo $(date) 'Hello, world!'; sleep 1; done" ]
+        lifecycle:
+          preStop:
+            exec:
+              command:
+              - sh
+              - c
+              - |
+                kill -15 1
+                sleep 30
+                kill 15 1
         ports:
         - containerPort: 8080
         resources:
