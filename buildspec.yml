@@ -23,7 +23,8 @@ phases:
       - echo $TAG > imageTag.txt
 artifacts:
   files:
-    - imageTag.txt
+    - app/app.jar
+  discard-paths: yes  
 cache:
   paths:
     - '/root/.gradle/caches/**/*'
