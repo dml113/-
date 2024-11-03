@@ -14,6 +14,6 @@ public class AppController {
     @GetMapping("/long-running")
     public String longRunningTask() throws InterruptedException {
         Thread.sleep(45000); // 10초 대기
-        return "Long running task completed";
+        return "version 1.0.0";
     }
 }
